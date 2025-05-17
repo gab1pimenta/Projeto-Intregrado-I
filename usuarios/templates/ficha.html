@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Ficha Técnica - La Hermosa Parrilla</title>
+    <link rel="stylesheet" href="{% static 'usuarios/css/style.css' %}">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ficha Técnica - La Hermosa Parrilla</h1>
+      <div id="receitaEscolhida">
+        <h2>{{ dados_receita.nome_receita }}</h2>
+      </div>
+
+      <!-- DADOS PRINCIPAIS E CUSTOS -->
+      <div class="linha">
+        <div class="principal">
+          <div class="item">
+            <p>Item: {{ dados_receita.nome_receita }}</p>
+          </div>
+          <div class="item">
+            <p>Classificação: {{ dados_receita.nome_categoria }}</p>
+          </div>
+          <div class="item">
+            <p>Número de porções: {{ dados_receita.numero_porcoes }}</p>
+          </div> 
+          <div class="item">
+            <p>Peso da porção: {{ dados_receita.peso_da_porcao }} g</p>
+          </div> 
+        </div>
+
+        <div class="detalhes">
+          <div class="item">
+            <p>Preço de custo por receita: R$ {{ custo_total|floatformat:2 }}</p>
+          </div>
+          <div class="item">
+            <p>Preço de custo por porção: R$ {{ preco_custo_por_porcao|floatformat:2 }}</p>
+          </div>
+          <div class="item">
+            <p>Preço de venda por receita:</p>
+          </div>
+          <div class="item">
+            <p>Preço de venda por porção:</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INGREDIENTES -->
+      <div class="linha">
+        <div class="principal-ing">
+          <div class="l2_1"><p>Ingredientes</p></div>
+          <div class="l2_2"><p>PB</p></div>
+          <div class="l2_3"><p>Unidade</p></div>
+          <div class="l2_4"><p>Aproveitamento ou FC</p></div>
+        </div>
+        <div class="detalhes-ing">
+          <div class="l2_5"><p>PL</p></div>
+          <div class="l2_6"><p>Custo Bruto Unitário (R$)</p></div>
+          <div class="l2_7"><p>Custo Total Bruto (R$)</p></div>
+          <div class="l2_8"><p>Observações</p></div>
+        </div>
+      </div>
+
+      {% for ing in ingredientes %}
+      <div class="linha">
+        <div class="principal-ing">
+          <div class="l2_1"><p>{{ ing.descricao_ingrediente }}</p></div>
+          <div class="l2_2"><p>{{ ing.quantidade }}</p></div>
+          <div class="l2_3"><p>{{ ing.abreviacao }}</p></div>
+          <div class="l2_4"><p><!-- Aproveitamento/FC se disponível --></p></div>
+        </div>
+        <div class="detalhes-ing">
+          <div class="l2_5"><p><!-- PL (Peso líquido), se disponível --></p></div>
+          <div class="l2_6"><p>R$ {{ ing.custo_unitario|floatformat:2 }}</p></div>
+          <div class="l2_7"><p>R$ {{ ing.custo_total_item|floatformat:2 }}</p></div>
+          <div class="l2_8"><p><!-- Observações, se houver --></p></div>
+        </div>
+      </div>
+      {% endfor %}
+
+      <!-- TABELA NUTRICIONAL E MODO DE PREPARO -->
+      <div class="linha">
+        <div class="principal">
+          <div class="item">
+            <p>Tabela nutricional:</p>
+          </div>
+        </div>
+        <div class="detalhes">
+          <div class="item">
+            <p>Modo de preparo:</p>
+            <ul>
+              {% for passo in modo_preparo %}
+                <li>{{ passo.texto_passo }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input class="botaoVoltar" type="button" value="Voltar" onclick="window.history.back()">
+  </body>
+</html>

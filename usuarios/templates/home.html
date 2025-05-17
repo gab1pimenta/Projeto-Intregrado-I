@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Ficha Técnica - La Hermosa Parrilla</title>
+    <link rel="stylesheet" href="{% static 'usuarios/css/style.css' %}">
+    <!--<script src="{% static 'usuarios/js/formulario.js' %}" defer></script>-->
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ficha Técnica - La Hermosa Parrilla</h1>
+      <div class="formulario">
+        <p>Selecione a receita:</p>
+        <form id="formulario" method="POST" action="{% url 'ficha' %}">
+        {% csrf_token %}
+          <select class="receitas" id="receitas" name="id_ficha">
+            <option value="1">Batata Rústica</option>
+            <option value="2">Creme de Milho</option>
+            <option value="3">Sanduíche Artesanal</option>
+          </select>
+          <input class="botaoVoltar" type="button" value="Voltar">
+          <input class="botao" type="submit" value="Enviar">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

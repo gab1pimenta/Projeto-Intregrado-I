@@ -1,0 +1,130 @@
+body {
+    background-color: #ffe6bf;
+    h1 {
+        text-align: center;
+        margin: 15px;
+        font-weight: 500;
+    }
+    p {
+        margin-left: 5px;
+    }
+}
+
+.container{
+    width: 90%;
+}
+
+.linha {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.item{
+    border: 1px black solid;
+}
+
+.principal {
+    width: 40%;
+}
+
+.seletor{
+    width: 30%;
+    margin: 0 auto;
+    height: 300px;
+}
+
+.formulario{
+    margin: 0 auto;
+    padding: 15px;
+    height: 125px;
+    width: 30%;
+    border: 1px black solid;
+}
+
+.formularioLogin{
+    margin: 0 auto;
+    padding: 15px;
+    height: 200px;
+    width: 30%;
+    border: 1px black solid;
+}
+
+.receitas{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.botao{
+    margin-top: 30px;
+    float: right;
+}
+
+.botaoVoltar{
+    margin-top: 30px;
+    float: left;
+}
+
+.detalhes {
+    width: 60%;
+    
+}
+
+.senhaErrada{
+    font-weight: bold;
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+.principal-ing {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 40%;
+}
+
+.detalhes-ing {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 60%;
+    
+}
+
+.l2_1 {
+    width: 100%;
+    border: 1px black solid;
+}
+
+.l2_2 {
+    width: 100%;
+    border: 1px black solid;
+}
+
+.l2_3 {
+    width: 100%;
+    border: 1px black solid;
+}
+
+.l2_4 {
+    width: 100%;
+    border: 1px black solid;
+}
+
+.l2_5 {
+    width: 100%;
+    border: 1px black solid;
+}
+
+.l2_6 {
+    width: 100%;
+    border: 1px black solid;
+}
+.l2_7 {
+    width: 100%;
+    border: 1px black solid;
+}
+.l2_8 {
+    width: 100%;
+    border: 1px black solid;
+}

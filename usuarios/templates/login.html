@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Ficha Técnica - La Hermosa Parrilla</title>
+    <link rel="stylesheet" href="{% static 'usuarios/css/style.css' %}">
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Ficha Técnica - La Hermosa Parrilla</h1>
+      <div class="formularioLogin">
+        <form method="post" action="{% url 'login' %}">
+          {% csrf_token %}
+          <p>Usuário:</p>
+          <input type="text" name="usuario" required>
+          <p>Senha:</p>
+          <input type="password" name="senha" required><br>
+          <input class="botao" type="submit" value="Enviar">
+        </form>
+        {% if error_message %}
+          <p class="senhaErrada">{{ error_message }}</p>
+        {% else %}
+          <p class="senhaErrada" style="display:none;">Usuário ou senha incorretos!</p>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>
+
