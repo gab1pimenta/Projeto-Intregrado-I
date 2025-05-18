@@ -79,11 +79,15 @@
       </div>
       {% endfor %}
 
-      <!-- TABELA NUTRICIONAL E MODO DE PREPARO -->
+      <!-- IMAGEM DA RECEITA E MODO DE PREPARO -->
       <div class="linha">
         <div class="principal">
           <div class="item">
-            <p>Tabela nutricional:</p>
+            <p>Imagem da receita:</p>           
+            <img 
+              src="{% static 'usuarios/img/' %}{{ dados_receita.nome_receita }}.jpg" 
+              alt="Imagem da receita {{ dados_receita.nome_receita }}" 
+              style="width: 200px; height: 200px; border-radius: 8px;">
           </div>
         </div>
         <div class="detalhes">
