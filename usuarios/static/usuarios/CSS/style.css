@@ -1,130 +1,256 @@
 body {
-    background-color: #ffe6bf;
-    h1 {
-        text-align: center;
-        margin: 15px;
-        font-weight: 500;
-    }
-    p {
-        margin-left: 5px;
-    }
+    background-color: #000;
+    margin: 0; 
+    font-family: sans-serif;
+    overflow-y: auto; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
 }
 
-.container{
-    width: 90%;
+h1.titulo-fixo {
+    background-color: #f8f5f0; 
+    color: #333; 
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.conteudo-pagina {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 60px); 
+    padding-top: 60px; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.container {
+    background-color: #f8f5f0; 
+    width: 80%;
+    max-width: 900px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    margin-bottom: 20px; 
+}
+
+
+.container > div {
+    background-color: #fefefe; 
+    margin-bottom: 15px; 
+    padding: 15px; 
+    border-radius: 5px;
+    border: 1px solid #eee; 
+    box-sizing: border-box; 
+}
+
+
+.container > div#receitaEscolhida {
+    background-color: transparent; 
+    padding: 0;
+    border: none;
+    border-radius: 0;
 }
 
 .linha {
     width: 100%;
-    margin: 0 auto;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap; 
+    align-items: stretch;
+    margin-bottom: 10px; 
+    box-sizing: border-box; 
 }
 
-.item{
-    border: 1px black solid;
+.item {
+    border: 1px solid #ddd; 
+    padding: 8px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+
+.item p {
+    margin: 0;
 }
 
 .principal {
     width: 40%;
-}
-
-.seletor{
-    width: 30%;
-    margin: 0 auto;
-    height: 300px;
-}
-
-.formulario{
-    margin: 0 auto;
-    padding: 15px;
-    height: 125px;
-    width: 30%;
-    border: 1px black solid;
-}
-
-.formularioLogin{
-    margin: 0 auto;
-    padding: 15px;
-    height: 200px;
-    width: 30%;
-    border: 1px black solid;
-}
-
-.receitas{
-    width: 100%;
-    margin: 0 auto;
-}
-
-.botao{
-    margin-top: 30px;
-    float: right;
-}
-
-.botaoVoltar{
-    margin-top: 30px;
-    float: left;
+    padding-right: 10px; 
+    box-sizing: border-box;
 }
 
 .detalhes {
-    width: 60%;
-    
-}
-
-.senhaErrada{
-    font-weight: bold;
-    color: red;
-    font-size: 12px;
-    display: none;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .principal-ing {
     display: flex;
     flex-flow: row nowrap;
     width: 40%;
+    box-sizing: border-box;
 }
 
 .detalhes-ing {
     display: flex;
     flex-flow: row nowrap;
     width: 60%;
+    box-sizing: border-box;
+}
+
+.l2_1, .l2_2, .l2_3, .l2_4 {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+
+.l2_5, .l2_6, .l2_7, .l2_8 {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+
+
+.principal-ing > div {
+    width: 50%; 
+}
+
+.detalhes-ing > div {
+    width: 50%; 
     
 }
 
-.l2_1 {
-    width: 100%;
-    border: 1px black solid;
+.principal .item:last-child,
+.detalhes .item:last-child,
+.principal-ing > div:last-child,
+.detalhes-ing > div:last-child {
+    margin-bottom: 0; 
+    
 }
 
-.l2_2 {
-    width: 100%;
-    border: 1px black solid;
+
+.principal .item:nth-child(1),
+.detalhes .item:nth-child(1) {
+    border: none; 
+    padding: 0;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-.l2_3 {
-    width: 100%;
-    border: 1px black solid;
+.detalhes .item ul {
+    padding-left: 20px;
+    margin-top: 5px;
 }
 
-.l2_4 {
-    width: 100%;
-    border: 1px black solid;
+.detalhes .item li {
+    font-size: 0.9em;
+    margin-bottom: 5px;
 }
 
-.l2_5 {
-    width: 100%;
-    border: 1px black solid;
+.botaoVoltar {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 10px;
 }
 
-.l2_6 {
-    width: 100%;
-    border: 1px black solid;
+.botaoVoltar:hover {
+    background-color: #e0e0e0;
 }
-.l2_7 {
-    width: 100%;
-    border: 1px black solid;
+
+
+.formularioLogin {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 5px; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
 }
-.l2_8 {
-    width: 100%;
-    border: 1px black solid;
+
+.formularioLogin p {    margin-bottom: 5px;
+    font-weight: bold;
 }
+
+.formularioLogin input[type="text"],
+.formularioLogin input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 80%; 
+    box-sizing: border-box;
+}
+
+.botao {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.botao:hover {
+    background-color: #0056b3;
+}
+
+.senhaErrada {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+.formulario {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.formulario p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.receitas {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 80%;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+
+.formulario .botaoVoltar {
+    background-color: #6c757d;
+    margin-right: 10px; 
+    position: static; 
+}
+
+.formulario .botaoVoltar:hover {
+    background-color: #5a6268;
+}
+
+
